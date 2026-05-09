@@ -48,16 +48,16 @@ between them.
 
 Not just a doorway — it is an active participant with its own vocabulary:
 
-| Tag        | Purpose                          |
-|------------|----------------------------------|
-| @type      | annotate a variable              |
-| @typedef   | define a custom type             |
-| @template  | generics                         |
-| @param     | parameter types                  |
-| @returns   | return type                      |
-| @callback  | function type definition         |
-| @overload  | multiple signatures              |
-| @satisfies | structural type check            |
+| Tag        | Purpose                               |
+|------------|---------------------------------------|
+| @type      | annotate a variable                   |
+| @typedef   | define a custom type                  |
+| @template  | generics                              |
+| @param     | parameter types                       |
+| @returns   | return type                           |
+| @overload  | multiple signatures                   |
+| @enum      | create named type using variable name |
+| @template  | generic type parameters               |
 
 ## The Realms
 
@@ -103,7 +103,7 @@ var a = 1  // code realm says: number
 
 ## The Rules
 
-### Rule 1 — Inference beats annotation
+### Rule 1 — Annotation beats Inference
 When a variable has both a `@type` annotation and an initializer,
 the annotation type from the initializer wins.
 
@@ -147,7 +147,7 @@ const y = add(3,3)  // displays as 6
 The mechanism that makes inference work is `@param` + `@returns` binding
 generics to the call site — not `@type` on the function itself.
 
-### Rule 6 — 1000 instantiation hard cap
+### Rule 7 — 1000 instantiation hard cap
 TypeScript will return `any` on type computations exceeding
 1000 recursive type instantiations.
 
@@ -258,3 +258,6 @@ The Veil has no purpose without both worlds.
 
 AetherScript is not the invention of something new.
 It is the naming of something that was always there.
+
+Paradise is not universal — it is defined by the environment.
+The Door can only open to what Paradise contains.
