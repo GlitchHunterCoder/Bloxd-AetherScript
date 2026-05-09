@@ -16,6 +16,11 @@ Writing pure TypeScript loses the execution layer.
 Writing pure JavaScript loses the computation layer.
 AetherScript uses both deliberately.
 
+AetherScript is most useful when you cannot use TypeScript directly
+but still want TypeScript's understanding of your code.
+It is the discovery that this was always possible,
+and the formal rules that make it intentional rather than accidental.
+
 > Code should hint in TypeScript but execute in JavaScript
 
 ```as
