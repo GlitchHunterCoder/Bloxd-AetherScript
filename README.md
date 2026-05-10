@@ -156,6 +156,11 @@ generics to the call site — not `@type` on the function itself.
 TypeScript will return `any` on type computations exceeding
 1000 recursive type instantiations.
 
+### Rule 8 — Paradise is scopeless
+@typedef and @enum declarations are globally visible
+regardless of where in the code they appear
+Function scope, block scope — irrelevant to Paradise
+
 ## Bridges
 
 ### Type Land → JS Land
