@@ -131,15 +131,16 @@ If a @typedef and a variable share the same name, both realms hold
 a definition and neither overwrites the other, causing a confused state.
 
 ```as
-/** @typedef {Arr} ArrNum */  // ❌ ArrNum in comment realm
-let ArrNum                    // ❌ ArrNum in code realm
-                              // result: undefined and number[] simultaneously
+/** @typedef {string} Duplicate */ // ❌ ArrNum in comment realm
+let Duplicate // ❌ ArrNum in code realm
+Duplicate // result: JS -> undefined and TS -> string simultaneously
 ```
 
 Use distinct names to keep realms unambiguous:
 ```as
-/** @typedef {Arr} ArrNumType */  // ✅ distinct name in comment realm
-let ArrNum                        // ✅ distinct name in code realm
+/** @typedef {number[]} ArrNumType */ // ✅ distinct name in comment realm
+/** @type {ArrNumType} */
+let ArrNum // ✅ distinct name in code realm
 ```
 
 ```as
